@@ -147,7 +147,7 @@ services:
     <<: *redishealthcheck
 
   cgw-web:
-    image: safeglobal/safe-client-gateway-nest:${CGW_VERSION}
+    image: safe-global/safe-client-gateway:${CGW_VERSION}
     env_file:
       - container_env_files/cgw.env
     depends_on:
@@ -155,7 +155,7 @@ services:
         condition: service_healthy
 
   ui:
-    image: safeglobal/safe-wallet-web:${UI_VERSION}
+    image: safe-global/safe-wallet-web:${UI_VERSION}
     env_file:
       - container_env_files/ui.env
     depends_on:
